@@ -2,12 +2,15 @@ const flickrKey = "5fc6b50d209c89a01df0bac5c1860aac"
 const baseUrl = `https://api.flickr.com/services/rest`
 const method = "flickr.photos.search";
 let pictures = document.getElementById("images-result")
-let text = "cats"
+let form = document.getElementById('search-form')
+let text = document.getElementById('search-input').value;
 let imgSize = "m"
 
-const mainUrl = `${baseUrl}?api_key=${flickrKey}&method=${method}&text=${text}&per_page=20&format=json&nojsoncallback=1`
+
 
 function fetchImages() {
+    pictures.innerHTML = '';
+    const mainUrl = `${baseUrl}?api_key=${flickrKey}&method=${method}&text=${text}&per_page=20&format=json&nojsoncallback=1`
     fetch(mainUrl)
       .then((response) => response.json())
       .then((data) => {
@@ -23,3 +26,9 @@ function fetchImages() {
   }
   
   fetchImages();
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    text = document.getElementById('search-input').value;
+    fetchImages();
+  });
