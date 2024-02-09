@@ -1,0 +1,9 @@
+footer {
+    display: flex;
+    background-color: #27393A;
+}
+
+h2, h3, h4 {
+    color: #ffffff;
+}
+
