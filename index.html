@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
 </head>
 <body>
@@ -14,8 +14,90 @@
         <button class="submit-btn" type="submit">Search</button>
       </form>
     </header>
+
+    <form id="search-form">
+      <input type="text" id="search-input" />
+      <button type="submit">Sök</button>
+    </form>
+
+
     <div id="images-result"></div>
+    <div class="row">
+      <div class="column">
+        <img
+          src=""
+          onclick="openModal();currentSlide(1)"
+          class="hover-shadow"
+          id="images-result" />
+      </div>
+      <div class="column">
+        <img
+          src="img/img_mountains.jpg"
+          onclick="openModal();currentSlide(2)"
+          class="hover-shadow" />
+      </div>
+      <div class="column">
+        <img
+          src="img/img_nature.jpg"
+          onclick="openModal();currentSlide(3)"
+          class="hover-shadow" />
+      </div>
+      <div class="column">
+        <img
+          src="img/img_snow.jpg"
+          onclick="openModal();currentSlide(4)"
+          class="hover-shadow" />
+      </div>
+    </div>
+
+    <!-- The Modal/Lightbox -->
+    <div id="myModal" class="modal">
+      <span class="close cursor" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
+        <div class="mySlides">
+          <div class="numbertext">1 / 4</div>
+          <img src="img/img_lights_wide.jpg" style="width: 100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">2 / 4</div>
+          <img src="img/img_mountains_wide.jpg" style="width: 100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">3 / 4</div>
+          <img src="img/img_nature_wide.jpg" style="width: 100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">4 / 4</div>
+          <img src="img/img_snow_wide.jpg" style="width: 100%" />
+        </div>
+
+        <!-- Next/previous controls -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <!-- Caption text -->
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+        <section>
+            <article>
+                <img class="icons" src="icons/arcticons--x-twitter.svg">
+                <img class="icons" src="icons/circum--instagram.svg">
+                <img class="icons" src="icons/iconoir--pinterest.svg">
+            </article>
+            <h2 class="footer__h2">Contact Us</h2>
+            <h3 class="footer__h3">Terms & Conditions</h3>
+            <h4 class="footer__h4">Flickr Search 2024</h4>
+        </section>
+    </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
