@@ -7,6 +7,10 @@ const imageDiv = document.getElementById("image-container")
 console.log("text", text)
 
 function fetchImages() {
+
+  text = document.getElementById("search-input").value;
+  let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${text}&format=json&nojsoncallback=1`
+
   fetch(url)
   .then(response => response.json())
   .then(data => {
@@ -40,8 +44,6 @@ form.addEventListener("submit", function (event) {
 })
 
 console.log("BANAN")
-
-fetchImages()
 
 
 
