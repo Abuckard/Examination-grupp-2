@@ -39,33 +39,9 @@ form.addEventListener("submit", function (event) {
   fetchImages();
 })
 
+console.log("BANAN")
 
 fetchImages()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
