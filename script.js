@@ -8,7 +8,7 @@ console.log("text", text)
 
 function fetchImages() {
 
-  text = document.getElementById("search-input").value;
+  let text = document.getElementById("search-input").value;
   let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${text}&format=json&nojsoncallback=1`
 
   fetch(url)
@@ -38,7 +38,6 @@ function fetchImages() {
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  /* location.reload() */
   text = document.getElementById("search-input").value;
   fetchImages();
 })
