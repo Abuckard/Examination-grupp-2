@@ -180,9 +180,27 @@ img.hover-shadow {
 
 footer {
     display: flex;
+    justify-content: center;
+    text-align: center;
     background-color: #27393A;
+    font-family: 'Lexend Deca', sans-serif;
 }
 
 h2, h3, h4 {
+    font-weight: lighter;
     color: #ffffff;
 }
+
+
+.icons {
+    background-color: #ffffff;
+    margin: 1rem;
+    width: 2.2rem;
+    border-radius: 50%;
+}
+
+/* h1 {
+    font-family: 'MuseoModerno', sans-serif;
+} */
+
+
