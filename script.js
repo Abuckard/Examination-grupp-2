@@ -1,4 +1,75 @@
-const flickrKey = "5fc6b50d209c89a01df0bac5c1860aac";
+const apiKey = "d5a8b95a199a41d6e05051401fc657a9"
+let form = document.getElementById("search-form")
+let text = document.getElementById("search-input").value
+let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${text}&format=json&nojsoncallback=1`
+const imageDiv = document.getElementById("image-container")
+
+console.log("text", text)
+
+function fetchImages() {
+  fetch(url)
+  .then(response => response.json())
+  .then(data => {
+
+    let images = data.photos.photo.slice(0, 8)
+    console.log(images)
+  
+    let imagesHtml = ``
+  
+    images.forEach(img => {
+      const farmId = img.farm
+      const serverId = img.server
+      const id = img.id
+      const secret = img.secret
+      
+      const imageUrl = `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${secret}_m.jpg`
+      console.log("MIN BILD", imageUrl)
+      imagesHtml += `<img src="${imageUrl}">`
+      
+    })
+    imageDiv.innerHTML = imagesHtml
+  
+  })
+}
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  location.reload()
+  text = document.getElementById("search-input").value;
+  fetchImages();
+})
+
+
+fetchImages()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const flickrKey = "5fc6b50d209c89a01df0bac5c1860aac";
 const baseUrl = `https://api.flickr.com/services/rest`;
 const method = "flickr.photos.search";
 let pictures = document.getElementById("images-result");
@@ -34,15 +105,15 @@ function fetchImages() {
     });
 }
 
-fetchImages();
+fetchImages(); */
 
-form.addEventListener("submit", function (event) {
+/* form.addEventListener("submit", function (event) {
   event.preventDefault();
   text = document.getElementById("search-input").value;
   fetchImages();
-});
+}); */
 
-function openModal() {
+/* function openModal() {
   document.getElementById("myModal").style.display = "block";
 }
 
@@ -82,3 +153,4 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
   captionText.innerHTML = dots[slideIndex - 1].alt;
 }
+ */
