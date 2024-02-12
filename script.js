@@ -32,6 +32,28 @@ function fetchImages() {
       
     })
     imageDiv.innerHTML = imagesHtml
+    const lightbox = document.createElement('div')
+lightbox.id = 'lightbox'
+document.body.appendChild(lightbox)
+
+const imagesTest = document.querySelectorAll('img')
+imagesTest.forEach(bild => {
+  bild.addEventListener('click', e => {
+    lightbox.classList.add('active')
+    const img = document.createElement('img')
+    img.src = bild.src
+    img.classList.add('lightbox-img')
+    while (lightbox.firstChild) {
+      lightbox.removeChild(lightbox.firstChild)
+    }
+    lightbox.appendChild(img)
+  })
+})
+lightbox.addEventListener('click', e => {
+  if (e.target !== e.currentTarget) 
+  return
+  lightbox.classList.remove('active')
+})
   
   })
 }
@@ -43,6 +65,8 @@ form.addEventListener("submit", function (event) {
 })
 
 console.log("BANAN")
+
+
 
 
 
