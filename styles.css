@@ -20,6 +20,11 @@ body {
     padding: 20px;
 }
 
+.logo-text {
+    font-family: 'MuseoModerno', sans-serif;
+    font-weight: 550;
+} 
+
 .form{
     padding: 20px 0;
 }
@@ -47,18 +52,22 @@ body {
   width: 300px;
   height: 300px;
   object-fit: cover;
+  margin: .5rem;
+  border-radius: 5%;
+  
 }
 
 .image-container{
-  margin: 50px;
+  min-height: 100vh;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+
 }
 
-.row > .column {
+/*.row > .column {
   padding: 0 8px;
 }
 
@@ -71,7 +80,7 @@ body {
 .column {
   float: left;
   width: 25%;
-}
+}*/
 
 /* The Modal (background) */
 .modal {
@@ -213,8 +222,6 @@ h2, h3, h4 {
     border-radius: 50%;
 }
 
-/* h1 {
-    font-family: 'MuseoModerno', sans-serif;
-} */
+
 
 
