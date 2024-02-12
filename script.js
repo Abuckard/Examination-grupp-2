@@ -26,9 +26,9 @@ function fetchImages() {
       const id = img.id
       const secret = img.secret
       
-      const imageUrl = `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${secret}_m.jpg`
+      const imageUrl = `https://farm${farmId}.staticflickr.com/${serverId}/${id}_${secret}_w.jpg`
       console.log("MIN BILD", imageUrl)
-      imagesHtml += `<img src="${imageUrl}">`
+      imagesHtml += `<img src="${imageUrl}" class="image">`
       
     })
     imageDiv.innerHTML = imagesHtml
