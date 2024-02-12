@@ -34,7 +34,7 @@ function fetchImages() {
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  location.reload()
+  /* location.reload() */
   text = document.getElementById("search-input").value;
   fetchImages();
 })
