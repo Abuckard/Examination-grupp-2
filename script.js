@@ -5,18 +5,29 @@ let pictures = document.getElementById("images-result");
 let form = document.getElementById("search-form");
 let text = document.getElementById("search-input").value;
 let imgSize = "m";
+let imageElement = document.querySelector('#images-result');
 
 function fetchImages() {
-  pictures.innerHTML = "";
-  const mainUrl = `${baseUrl}?api_key=${flickrKey}&method=${method}&text=${text}&per_page=20&format=json&nojsoncallback=1`;
+  
+  const mainUrl = `${baseUrl}?api_key=${flickrKey}&method=${method}&text=${text}&per_page=8&format=json&nojsoncallback=1`;
   fetch(mainUrl)
     .then((response) => response.json())
     .then((data) => {
+      let imgUrls = [];
       data.photos.photo.forEach((img) => {
         let imgUrl = `https://farm${img.farm}.staticflickr.com/${img.server}/${img.id}_${img.secret}_${imgSize}.jpg`;
-        console.log(imgUrl);
-        pictures.innerHTML += '<img src="' + imgUrl + '">';
+        imgUrls.push(imgUrl);
       });
+
+      for (let i = 1; i <= imgUrls.length; i++) {
+        if (imgUrls[i - 1]) {
+          let imageElement = document.querySelector(`#images-result-${i}`);
+          imageElement.src = imgUrls[i - 1];
+        } else {
+          console.log(`Bild ${i} kunde inte laddas`);
+          
+        }
+      }
     })
     .catch((error) => {
       console.error("Error fetching images:", error);
