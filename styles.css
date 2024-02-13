@@ -78,8 +78,10 @@ body {
   display: none;
 }
 .lightbox-img {
-  width: 850px;
+  object-fit: contain;
+  /* width: 850px; */
   max-height: 80%;
+  max-width: 80%;
 }
 #lightbox.active {
   display: flex;
