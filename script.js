@@ -1,7 +1,7 @@
 const apiKey = "d5a8b95a199a41d6e05051401fc657a9"
 let form = document.getElementById("search-form")
 let text = document.getElementById("search-input").value
-let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${text}&sort=relevance&format=json&nojsoncallback=1`
+let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${text}&format=json&nojsoncallback=1`
 const imageDiv = document.getElementById("image-container")
 
 console.log("text", text)
@@ -9,7 +9,7 @@ console.log("text", text)
 function fetchImages() {
 
   let text = document.getElementById("search-input").value;
-  let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${text}&format=json&nojsoncallback=1`
+  let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${text}&sort=relevance&format=json&nojsoncallback=1`
 
   fetch(url)
   .then(response => response.json())
