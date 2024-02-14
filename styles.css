@@ -21,6 +21,7 @@ body {
     padding: 20px;
 }
 
+
 .logo-text {
     font-family: 'MuseoModerno', sans-serif;
     font-weight: 550;
@@ -53,23 +54,27 @@ body {
 
 /* GALLERY */
 
+h1 {
+  font-family: 'MuseoModerno', sans-serif;
+}
+
 .image{
   width: 350px;
   height: 350px;
   object-fit: cover;
-  margin: .5rem;
+  margin: .6rem;
   cursor: pointer;
   
 }
 
 .image-container{
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 1rem;
-
+  margin: 3rem;
+  
 }
 
 #lightbox {
@@ -117,6 +122,3 @@ h2, h3, h4 {
     border-radius: 50%;
 } 
 
-h1 {
-    font-family: 'MuseoModerno', sans-serif;
-}
