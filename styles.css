@@ -64,11 +64,7 @@ h1 {
   object-fit: cover;
   margin: .6rem;
   cursor: pointer;
-  transition: box-shadow 0.5s ease;
-}
-
-.image:hover {
-  box-shadow: 0 0 10px 5px rgba(0,0,0,0.7);
+  
 }
 
 .image-container{
@@ -78,7 +74,6 @@ h1 {
   align-items: center;
   justify-content: center;
   margin: 3rem;
-  
 }
 
 #lightbox {
